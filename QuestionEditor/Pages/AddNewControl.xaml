@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="QuestionEditor.Pages.AddNewControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:QuestionEditor.Pages"
+             xmlns:editControls="clr-namespace:QuestionEditor.Pages.EditControls"
+             mc:Ignorable="d" KeyDown="AddNewControl_OnKeyDown">
+    <d:UserControl.DataContext>
+        <local:AddNewControl></local:AddNewControl>
+    </d:UserControl.DataContext>
+
+    <DockPanel>
+        <Grid DockPanel.Dock="Bottom" Margin="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <!-- 提交 --><!-- 清空 -->
+            <Button Content="{Binding SubmitBtnText, Mode=OneWay}"
+                    HorizontalAlignment="Stretch"
+                    MinHeight="40"
+                    Margin="0 0 10 0"
+                    Click="SubmitClick"
+                    x:Name="SubmitBtn"
+                    FontSize="20"
+                    IsEnabled="{Binding IsSubmitClickable, Mode=OneWay}"
+                    Style="{StaticResource ButtonPrimary}">
+            </Button>
+            
+            <Button Grid.Column="1"
+                    Content="{Binding ClearBtnText, Mode=OneWay}"
+                    HorizontalAlignment="Stretch"
+                    MinHeight="40"
+                    Click="ClearClick"
+                    FontSize="20"
+                    IsEnabled="{Binding IsClearClickable, Mode=OneWay}"
+                    Style="{StaticResource ButtonDanger}">
+            </Button>
+        </Grid>
+        
+        <TabControl Style="{StaticResource TabControlCapsule}" x:Name="TabControl">
+            <TabItem Header="填空题">
+                <editControls:EditCompletionControl DataContext="{Binding VmCompletion}" GotFocus="OnGotFocus"/>
+            </TabItem>
+            <TabItem Header="单选题">
+                <editControls:EditMultipleChoiceControl DataContext="{Binding VmMultipleChoice}" GotFocus="OnGotFocus"/>
+            </TabItem>
+            <TabItem Header="分步信息题">
+                <editControls:EditStepByStepControl DataContext="{Binding VmStepByStep}" GotFocus="OnGotFocus"/>
+            </TabItem>
+        </TabControl>
+    </DockPanel>
+</UserControl>

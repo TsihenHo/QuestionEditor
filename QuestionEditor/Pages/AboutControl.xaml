@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="QuestionEditor.Pages.AboutControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:QuestionEditor.Pages"
+             xmlns:viewModels="clr-namespace:QuestionEditor.ViewModels"
+             mc:Ignorable="d">
+    <UserControl.DataContext>
+        <viewModels:AboutViewModel></viewModels:AboutViewModel>
+    </UserControl.DataContext>
+    <ScrollViewer VerticalScrollBarVisibility="Visible">
+        <TextBlock FontSize="20" TextWrapping="Wrap">
+            本应用由成七科协 2022 级编辑部成员何子恒完成，为方便维护，以 AGPLv3.0 开放源代码于
+            <Hyperlink
+                Command="{Binding GithubCommand}"
+                CommandParameter="https://github.com/TsihenHo/QuestionEditor">
+                https://github.com/TsihenHo/QuestionEditor
+            </Hyperlink>
+            （点击时会打开浏览器，所以不要一直点）。
+            <LineBreak></LineBreak>
+            <LineBreak></LineBreak>
+            你不应该指望在这里看到使用指南与帮助，但我还是大发慈悲地告诉你一些罢。
+            <LineBreak></LineBreak>
+            <LineBreak></LineBreak>
+            这个界面似乎可以用滚轮翻动。
+            <LineBreak></LineBreak>
+            <LineBreak></LineBreak>
+            在“编题”界面，你不应该输入题号；选项不应该输入标号；按 Tab 键可以以一定的顺序切换，Shift-Tab 反之；填空题选项留空即可；Enter 换行；无论在哪一个输入框，按下 Ctrl-Enter 都能直接录入。
+            <LineBreak></LineBreak>
+            <LineBreak></LineBreak>
+            “Documents”文件夹有时又叫“文档”——不必担心找不到它，“概览”页面中点击任意文字都会自动定位到“QuestionEditor.db”。
+            <LineBreak></LineBreak>
+            <LineBreak></LineBreak>
+            出题时最好不要往里面塞些比较特殊的字符——更不要来 Emoji ☺——虽然在我这里一切正常，但是到了lb那里，我可就不知道使用这些东西会导致什么后果。
+            <LineBreak></LineBreak>
+            <LineBreak></LineBreak>
+        </TextBlock>
+    </ScrollViewer>
+</UserControl>

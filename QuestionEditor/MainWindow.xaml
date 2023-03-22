@@ -1,0 +1,33 @@
+﻿<Window x:Class="QuestionEditor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QuestionEditor"
+        mc:Ignorable="d"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
+        xmlns:pages="clr-namespace:QuestionEditor.Pages"
+        Icon="Ico/Pencil.ico"
+        Title="题目编辑器" Height="450" Width="800"
+        hc:Dialog.Token="MainWindow">
+    <TabControl Margin="10" Style="{StaticResource TabControlInLine}">
+        <TabItem Header="概览" >
+            <pages:GeneralControl Margin="10" />
+        </TabItem>
+        <TabItem Header="管理" >
+            <pages:ManageControl Margin="10" />
+        </TabItem>
+        <TabItem Header="编题">
+            <pages:AddNewControl Margin="10" />
+        </TabItem>
+        <TabItem Header="协作">
+            <pages:CooperationControl Margin="10"></pages:CooperationControl>
+        </TabItem>
+        <TabItem Header="导出">
+            <pages:ExportControl Margin="10"></pages:ExportControl>
+        </TabItem>
+        <TabItem Header="关于">
+            <pages:AboutControl Margin="10" />
+        </TabItem>
+    </TabControl>
+</Window>

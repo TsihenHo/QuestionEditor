@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net6.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <UseWPF>true</UseWPF>
+        <ApplicationIcon>Ico\Pencil.ico</ApplicationIcon>
+        <Authors>Tsihen</Authors>
+        <PackageProjectUrl>https://github.com/TsihenHo/QuestionEditor</PackageProjectUrl>
+        <Company />
+        <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <PlatformTarget>x64</PlatformTarget>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <PlatformTarget>x64</PlatformTarget>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="HandyControl" Version="3.4.0" />
+      <PackageReference Include="SQLite" Version="3.13.0" />
+      <PackageReference Include="System.Data.SQLite.Core" Version="1.0.117" />
+      <PackageReference Include="System.Text.Encoding.CodePages" Version="7.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Ico\Pencil.ico" />
+      <Resource Include="Ico\Pencil.ico" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Pages\ManageControls" />
+    </ItemGroup>
+
+</Project>

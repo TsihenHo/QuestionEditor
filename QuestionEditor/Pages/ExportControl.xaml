@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="QuestionEditor.Pages.ExportControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:QuestionEditor.Pages"
+             mc:Ignorable="d"     
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             d:DesignHeight="300" d:DesignWidth="300" >
+    <hc:SimplePanel MouseLeftButtonDown="UIElement_OnMouseLeftButtonDown">
+        <TextBlock Text="点击以导出为 lb 喜欢的格式（似乎lb只喜欢3条线索，那我就多退少补咯）（可能会卡住最多半分钟，你最好别给关了）" 
+                   TextWrapping="Wrap"
+                   Style="{StaticResource TextBlockLargeBold}"></TextBlock>
+    </hc:SimplePanel>
+    
+</UserControl>
